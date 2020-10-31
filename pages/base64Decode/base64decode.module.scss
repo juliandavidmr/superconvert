@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 99%;
+
+    .side {
+        height: 100%;
+        width: 100%;
+        padding: 0 .4rem;
+
+        textarea {
+            height: 80%;
+            width: 100%;
+            min-width: 200px;
+            padding: 1rem;
+            margin: .4rem;
+            border-radius: 12px;
+            outline: none;
+            box-shadow: 0px 7px 9px 0px #dadada;
+            resize: vertical;
+            transition-duration: .3s;
+
+            &::placeholder {
+                font-size: large;
+            }
+
+            &:focus {
+                border: 2px solid #333333;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        height: initial;
+        width: 99%;
+    }
+}

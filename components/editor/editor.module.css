@@ -1,0 +1,152 @@
+    .browser {
+        max-width: 750px;
+        width: 95%;
+        border-radius: 12px;
+        max-height: 650px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 1px 1px black;
+    }
+
+    .browser__header {
+        padding: 15px;
+        position: relative;
+    }
+
+    .browser__header::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: black;
+        content: "";
+    }
+
+    .browser__header i {
+        display: inline-block;
+        vertical-align: middle;
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        margin-right: 5px;
+        border: 1px solid black;
+    }
+
+    .browser__header i:nth-child(1) {
+        background: #e85d75;
+    }
+
+    .browser__header i:nth-child(2) {
+        background: #eec643;
+    }
+
+    .browser__header i:nth-child(3) {
+        background: #79b791;
+    }
+
+    .browser__content {
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        resize: vertical;
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* textarea {
+        border-radius: 0 0 12px 12px;
+        margin: 0 auto;
+        border: none;
+    }*/
+
+    .browser h1,
+    .browser p {
+        color: var(--text);
+        -webkit-transition: color 200ms linear 100ms;
+        transition: color 200ms linear 100ms;
+    }
+
+    .browser__content p {
+        line-height: 1.5;
+    }
+
+    .toggle {
+        position: absolute;
+        top: 14px;
+        right: 15px;
+    }
+
+    .toggle label {
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 22px;
+        background: #fff;
+        border: 1px solid var(--text);
+        border-radius: 100px;
+        cursor: pointer;
+    }
+
+    .toggle label::before {
+        position: absolute;
+        width: 900px;
+        height: 900px;
+        background: var(--background);
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 100%;
+        opacity: 1;
+        -webkit-transform: translate3d(-47%, 0, 0) scale(0.1);
+        transform: translate3d(-47%, 0, 0) scale(0.1);
+        -webkit-transition: background 300ms ease-in-out 200ms, opacity 350ms ease-in-out 200ms, -webkit-transform 400ms ease-in-out;
+        transition: background 300ms ease-in-out 200ms, opacity 350ms ease-in-out 200ms, -webkit-transform 400ms ease-in-out;
+        transition: background 300ms ease-in-out 200ms, opacity 350ms ease-in-out 200ms, transform 400ms ease-in-out;
+        transition: background 300ms ease-in-out 200ms, opacity 350ms ease-in-out 200ms, transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+        pointer-events: none;
+        content: "";
+        opacity: 0;
+        z-index: -999;
+    }
+
+    .toggle label::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 4px;
+        margin: auto;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border: 1px solid black;
+        content: "";
+        border-radius: 100px;
+        -webkit-transition: background 200ms linear, -webkit-transform 200ms ease-in-out 100ms;
+        transition: background 200ms linear, -webkit-transform 200ms ease-in-out 100ms;
+        transition: background 200ms linear, transform 200ms ease-in-out 100ms;
+        transition: background 200ms linear, transform 200ms ease-in-out 100ms, -webkit-transform 200ms ease-in-out 100ms;
+    }
+
+    .toggle input {
+        display: none;
+    }
+
+    .toggle input:checked~label:after {
+        background: #000;
+        -webkit-transform: translate3d(27px, 0, 0);
+        transform: translate3d(27px, 0, 0);
+    }
+
+    .toggle input:checked~label:before {
+        -webkit-transform: translate3d(-84%, 23%, 0) scale(1);
+        transform: translate3d(-84%, 23%, 0) scale(1);
+        -webkit-transition: background 300ms ease-in-out, opacity 30ms ease-in-out, -webkit-transform 400ms ease-in-out;
+        transition: background 300ms ease-in-out, opacity 30ms ease-in-out, -webkit-transform 400ms ease-in-out;
+        transition: background 300ms ease-in-out, opacity 30ms ease-in-out, transform 400ms ease-in-out;
+        transition: background 300ms ease-in-out, opacity 30ms ease-in-out, transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+        opacity: 1;
+    }
